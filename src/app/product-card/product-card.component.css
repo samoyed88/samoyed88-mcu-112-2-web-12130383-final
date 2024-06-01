@@ -26,3 +26,7 @@ button.add {
   background-color: #007bff;
   color: white;
 }
+
+.onSALE {
+  color: red;
+}
