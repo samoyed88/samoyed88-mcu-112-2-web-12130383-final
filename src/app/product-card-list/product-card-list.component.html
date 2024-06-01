@@ -1,1 +1,13 @@
-<p>product-card-list works!</p>
+<div class="container">
+  @for (product of products; track product.id) {
+  <app-product-card
+    [id]="product.id"
+    [productName]="product.name"
+    [authors]="product.authors"
+    [company]="product.company"
+    [isSALE]="product.isSALE"
+    [imgUrl]="product.imgUrl"
+    [price]="product.price"
+  ></app-product-card>
+  }
+</div>
