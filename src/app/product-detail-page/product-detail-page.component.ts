@@ -30,6 +30,6 @@ export class ProductDetailPageComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.product = this.productService.getById(this.id);
+    this.productService.getById(this.id).subscribe((product) => (this.product = product));
   }
 }
