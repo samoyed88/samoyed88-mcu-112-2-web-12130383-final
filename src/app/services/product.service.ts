@@ -47,4 +47,8 @@ export class ProductService {
   getList(): Product[] {
     return this._data;
   }
+
+  getById(productId: number): Product {
+    return this._data.find(({ id }) => id === productId)!;
+  }
 }
