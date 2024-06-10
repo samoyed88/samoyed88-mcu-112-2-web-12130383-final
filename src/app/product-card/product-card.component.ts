@@ -10,7 +10,7 @@ import { Component, EventEmitter, HostBinding, Input, Output, numberAttribute } 
 })
 export class ProductCardComponent {
   @Input() productName!: string;
-  @Input() authors!: string;
+  @Input() authors!: string[];
   @Input() company!: string;
   @Input() isSALE!: boolean;
   @Input() imgUrl!: string;
