@@ -12,4 +12,9 @@
   ></app-product-card>
   }
 </div>
-<app-pagination [totalCount]="totalCount" [pageSize]="pageSize" [(pageIndex)]="pageIndex"></app-pagination>
+<app-pagination
+  [totalCount]="totalCount"
+  [pageSize]="pageSize"
+  [pageIndex]="pageIndex"
+  (pageIndexChange)="pageIndexChange.emit($event)"
+></app-pagination>
