@@ -26,6 +26,6 @@ export class ProductPageComponent {
 
   readonly products$ = this.refresh$.pipe(
     startWith(undefined),
-    switchMap(() => this.productService.getList())
+    switchMap(() => this.productService.getList('產品B', 1, 5))
   );
 }
