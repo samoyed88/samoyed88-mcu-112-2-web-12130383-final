@@ -11,7 +11,7 @@
       "company": "博碩文化",
       "isSALE": true,
       "imgUrl": "https://api.fnkr.net/testimg/200x200/DDDDDD/999999/?text=img",
-      "price": 10000
+      "price": 1580
     },
     {
       "id": 2,
@@ -24,7 +24,7 @@
       "company": "博碩文化",
       "isSALE": false,
       "imgUrl": "https://api.fnkr.net/testimg/200x200/DDDDDD/999999/?text=img",
-      "price": 10000
+      "price": 1580
     },
     {
       "id": 3,
@@ -37,7 +37,7 @@
       "company": "博碩文化",
       "isSALE": false,
       "imgUrl": "https://api.fnkr.net/testimg/200x200/DDDDDD/999999/?text=img",
-      "price": 10000
+      "price": 1580
     },
     {
       "id": 4,
@@ -50,7 +50,7 @@
       "company": "博碩文化",
       "isSALE": false,
       "imgUrl": "https://api.fnkr.net/testimg/200x200/DDDDDD/999999/?text=img",
-      "price": 10000
+      "price": 1580
     },
     {
       "id": 5,
@@ -63,7 +63,7 @@
       "company": "博碩文化",
       "isSALE": false,
       "imgUrl": "https://api.fnkr.net/testimg/200x200/DDDDDD/999999/?text=img",
-      "price": 10000
+      "price": 1580
     },
     {
       "id": 6,
@@ -76,7 +76,7 @@
       "company": "博碩文化",
       "isSALE": false,
       "imgUrl": "https://api.fnkr.net/testimg/200x200/DDDDDD/999999/?text=img",
-      "price": 10000
+      "price": 1580
     },
     {
       "id": 7,
@@ -89,7 +89,7 @@
       "company": "博碩文化",
       "isSALE": false,
       "imgUrl": "https://api.fnkr.net/testimg/200x200/DDDDDD/999999/?text=img",
-      "price": 10000
+      "price": 1580
     }
   ]
 }
