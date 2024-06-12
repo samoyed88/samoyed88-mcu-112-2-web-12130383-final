@@ -1,0 +1,51 @@
+:host {
+  display: block;
+}
+
+.container {
+  width: 500px;
+  margin: 10px auto;
+}
+
+.form-item {
+  margin: 10px 0px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-column {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form-column > label,
+.form-column > div {
+  flex-basis: 150px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.form-column > input {
+  flex-grow: 1;
+  padding: 5px 10px;
+  font-size: 20px;
+}
+
+.error-message {
+  color: red;
+}
+
+table {
+  border-collapse: collapse;
+  border: 2px solid rgb(0 0 0);
+  margin-left: 1%;
+  margin-top: 1%;
+}
+
+th,
+td {
+  border: 2px solid rgb(0 0 0);
+  padding: 8px 10px;
+}

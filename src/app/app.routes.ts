@@ -8,5 +8,5 @@ export const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'products' },
   { path: 'products', component: ProductPageComponent },
   { path: 'product/form/:id', component: ProductDetailPageComponent, resolve: { product: productResolver } },
-  { path: 'login', component: ShoppingCartPageComponent },
+  { path: 'shopping-cart', component: ShoppingCartPageComponent },
 ];

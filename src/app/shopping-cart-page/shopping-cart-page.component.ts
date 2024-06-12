@@ -5,8 +5,6 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './shopping-cart-page.component.html',
-  styleUrl: './shopping-cart-page.component.css'
+  styleUrl: './shopping-cart-page.component.css',
 })
-export class ShoppingCartPageComponent {
-
-}
+export class ShoppingCartPageComponent {}
