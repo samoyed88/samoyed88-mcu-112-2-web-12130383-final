@@ -37,15 +37,32 @@
   color: red;
 }
 
-table {
+.table1 {
   border-collapse: collapse;
   border: 2px solid rgb(0 0 0);
   margin-left: 1%;
+  margin-right: auto;
+  margin-top: 1%;
+}
+.table2 {
+  border: 2px solid rgb(0 0 0);
+  border-collapse: collapse;
+  margin-right: 1%;
+  margin-left: auto;
+  width: 50%;
   margin-top: 1%;
 }
 
-th,
+th {
+  font-size: 20px;
+  display: block;
+}
+
 td {
   border: 2px solid rgb(0 0 0);
   padding: 8px 10px;
+}
+
+.table {
+  display: flex;
 }
