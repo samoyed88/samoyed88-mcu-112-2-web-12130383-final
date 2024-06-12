@@ -42,7 +42,7 @@ export class ProductPageComponent {
   }
 
   onView(product: Product): void {
-    this.router.navigate(['product', 'form', product.id]);
+    this.router.navigate(['product', 'view', product.id]);
   }
 
   readonly products$ = combineLatest([

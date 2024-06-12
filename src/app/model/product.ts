@@ -10,7 +10,9 @@ export class Product {
 
   company!: string;
 
-  isSALE!: boolean;
+  isShow!: boolean;
+
+  isSale!: boolean;
 
   imgUrl!: string;
 

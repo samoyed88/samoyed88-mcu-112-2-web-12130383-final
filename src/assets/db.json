@@ -9,7 +9,8 @@
         "作者丙"
       ],
       "company": "博碩文化",
-      "isSALE": true,
+      "isShow": true,
+      "isSale": true,
       "imgUrl": "https://api.fnkr.net/testimg/200x200/DDDDDD/999999/?text=img",
       "price": 1580
     },
@@ -22,7 +23,8 @@
         "作者丙"
       ],
       "company": "博碩文化",
-      "isSALE": false,
+      "isShow": true,
+      "isSale": false,
       "imgUrl": "https://api.fnkr.net/testimg/200x200/DDDDDD/999999/?text=img",
       "price": 1580
     },
@@ -35,7 +37,8 @@
         "作者丙"
       ],
       "company": "博碩文化",
-      "isSALE": false,
+      "isShow": true,
+      "isSale": false,
       "imgUrl": "https://api.fnkr.net/testimg/200x200/DDDDDD/999999/?text=img",
       "price": 1580
     },
@@ -48,7 +51,8 @@
         "作者丙"
       ],
       "company": "博碩文化",
-      "isSALE": false,
+      "isShow": true,
+      "isSale": false,
       "imgUrl": "https://api.fnkr.net/testimg/200x200/DDDDDD/999999/?text=img",
       "price": 1580
     },
@@ -61,7 +65,8 @@
         "作者丙"
       ],
       "company": "博碩文化",
-      "isSALE": false,
+      "isShow": true,
+      "isSale": false,
       "imgUrl": "https://api.fnkr.net/testimg/200x200/DDDDDD/999999/?text=img",
       "price": 1580
     },
@@ -74,7 +79,8 @@
         "作者丙"
       ],
       "company": "博碩文化",
-      "isSALE": false,
+      "isShow": true,
+      "isSale": false,
       "imgUrl": "https://api.fnkr.net/testimg/200x200/DDDDDD/999999/?text=img",
       "price": 1580
     },
@@ -87,7 +93,8 @@
         "作者丙"
       ],
       "company": "博碩文化",
-      "isSALE": false,
+      "isShow": true,
+      "isSale": false,
       "imgUrl": "https://api.fnkr.net/testimg/200x200/DDDDDD/999999/?text=img",
       "price": 1580
     }

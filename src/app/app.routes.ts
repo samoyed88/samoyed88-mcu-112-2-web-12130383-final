@@ -7,6 +7,6 @@ import { ShoppingCartPageComponent } from './shopping-cart-page/shopping-cart-pa
 export const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'products' },
   { path: 'products', component: ProductPageComponent },
-  { path: 'product/form/:id', component: ProductDetailPageComponent, resolve: { product: productResolver } },
+  { path: 'product/view/:id', component: ProductDetailPageComponent, resolve: { product: productResolver } },
   { path: 'shopping-cart', component: ShoppingCartPageComponent },
 ];

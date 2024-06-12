@@ -26,6 +26,19 @@ button.add {
   color: white;
 }
 
-.onSALE {
+.onSale {
   color: red;
+}
+
+.notShow {
+  color: #999;
+}
+
+div.data-empty {
+  padding: 15px;
+  border: 1px solid #ccc;
+  width: 100%;
+  font-size: 20px;
+  font-weight: 200;
+  text-align: center;
 }
