@@ -1,4 +1,4 @@
-<div class="table">
+<div class="table" [formGroup]="form">
   <table class="table1">
     <tr>
       <th>基本資料</th>
@@ -9,22 +9,30 @@
           <div class="form-item">
             <div class="form-column">
               <label>姓名</label>
-              <input type="text" />
+              <input type="text" formControlName="name" />
+              @if(name.hasError('required')){
               <div class="error-message">請輸入姓名</div>
+              }
             </div>
           </div>
           <div class="form-item">
             <div class="form-column">
               <label>地址</label>
-              <input type="text" />
+              <input type="text" formControlName="address" />
+              @if(address.hasError('required')){
               <div class="error-message">請輸入地址</div>
+              }
             </div>
           </div>
           <div class="form-item">
             <div class="form-column">
               <label>電話</label>
-              <input type="text" />
+              <input type="text" formControlName="phone" />
+              @if(phone.hasError('required')){
               <div class="error-message">請輸入電話</div>
+              }@if (phone.hasError('pattern')) {
+              <div class="error-message">請輸入正確號碼</div>
+              }
             </div>
           </div>
         </div>
@@ -40,3 +48,6 @@
     </tr>
   </table>
 </div>
+<pre>{{ form.value | json }}</pre>
+<pre>{{ form.invalid | json }}</pre>
+<button type="button" class="send" [disabled]="form.invalid">送出訂單</button>
