@@ -75,3 +75,31 @@ button.send:disabled {
   color: #999;
   cursor: not-allowed;
 }
+
+.table2 .item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.table2 .item .id,
+.table2 .item .name,
+.table2 .item .count,
+.table2 .item .price,
+.table2 .item .delete {
+  margin-right: 10px; /* 可以根據需要調整間距 */
+}
+
+.table2 .item .count input {
+  width: 60px; /* 可以根據需要調整輸入框的寬度 */
+}
+
+.table2 .item .delete button {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
