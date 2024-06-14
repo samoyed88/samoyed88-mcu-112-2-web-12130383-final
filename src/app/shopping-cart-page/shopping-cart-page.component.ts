@@ -1,6 +1,8 @@
 import { CurrencyPipe, JsonPipe } from '@angular/common';
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, DestroyRef, OnInit, inject } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { FormArray, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { filter, map } from 'rxjs';
 import { IOrderForm } from '../interface/order-form.interface';
 import { IShoppingCartForm } from '../interface/shopping-cart.interface';
 import { Product } from '../model/product';
@@ -15,6 +17,8 @@ import { ShoppingCartService } from '../services/shopping-cart.service';
 })
 export class ShoppingCartPageComponent implements OnInit {
   readonly ShoppingCartService = inject(ShoppingCartService);
+
+  private readonly destroyRef = inject(DestroyRef);
 
   form = new FormGroup<IShoppingCartForm>({
     name: new FormControl<string | null>(null, { validators: [Validators.required] }),
@@ -35,7 +39,7 @@ export class ShoppingCartPageComponent implements OnInit {
     return this.form.get('phone') as FormControl<string | null>;
   }
 
-  get detail(): FormArray<FormGroup<IOrderForm>> {
+  get details(): FormArray<FormGroup<IOrderForm>> {
     return this.form.get('details') as FormArray<FormGroup<IOrderForm>>;
   }
 
@@ -52,7 +56,16 @@ export class ShoppingCartPageComponent implements OnInit {
         price: new FormControl<number>(item.product.price * item.count, { nonNullable: true }),
       });
 
-      this.detail.push(control);
+      control
+        .get('count')
+        ?.valueChanges.pipe(
+          filter((value) => value !== null),
+          map((value) => value * item.product.price),
+          takeUntilDestroyed(this.destroyRef)
+        )
+        .subscribe((price) => control.get('price')?.setValue(price, { EventEmitter: false }));
+
+      this.details.push(control);
     }
   }
 
