@@ -22,4 +22,7 @@ export class ProductCardComponent {
 
   @Output()
   view = new EventEmitter<void>();
+
+  @Output()
+  addTo = new EventEmitter<void>();
 }
