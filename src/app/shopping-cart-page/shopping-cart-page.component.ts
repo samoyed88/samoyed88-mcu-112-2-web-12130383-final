@@ -55,4 +55,8 @@ export class ShoppingCartPageComponent implements OnInit {
       this.detail.push(control);
     }
   }
+
+  onSend(): void {
+    console.log('save');
+  }
 }

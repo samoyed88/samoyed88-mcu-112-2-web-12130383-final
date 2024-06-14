@@ -59,7 +59,5 @@
     </tr>
   </table>
 </div>
-<pre>{{ form.value | json }}</pre>
-<pre>{{ form.invalid | json }}</pre>
 <pre>{{ ShoppingCartService.data | json }}</pre>
-<button type="button" class="send" [disabled]="form.invalid">送出訂單</button>
+<button type="button" class="send" [disabled]="form.invalid || detail.length===0" (click)="onSend()">送出訂單</button>
