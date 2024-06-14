@@ -71,7 +71,7 @@ button.send {
 }
 
 button.send:disabled {
-  background-color: #ccc;
+  border: 1px solid #ccc;
   color: #999;
   cursor: not-allowed;
 }
@@ -97,9 +97,9 @@ button.send:disabled {
 }
 
 .table2 .item .delete button {
-  background-color: red;
-  color: white;
-  border: none;
+  background-color: white;
+  color: red;
+  border: 1px solid red;
   padding: 5px 10px;
   cursor: pointer;
 }
