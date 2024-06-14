@@ -20,6 +20,8 @@ export class ShoppingCartPageComponent implements OnInit {
 
   private readonly destroyRef = inject(DestroyRef);
 
+  totalPrice = 0;
+
   form = new FormGroup<IShoppingCartForm>({
     name: new FormControl<string | null>(null, { validators: [Validators.required] }),
     address: new FormControl<string | null>(null, { validators: [Validators.required] }),
@@ -44,6 +46,19 @@ export class ShoppingCartPageComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.details.valueChanges
+      .pipe(
+        map((items) => {
+          if (items.length === 0) {
+            return 0;
+          } else {
+            return items.reduce((sum, curr) => sum + (curr.price || 0), 0);
+          }
+        }),
+        takeUntilDestroyed(this.destroyRef)
+      )
+      .subscribe((totalPrice) => (this.totalPrice = totalPrice));
+
     this.setOrderDetail();
   }
 

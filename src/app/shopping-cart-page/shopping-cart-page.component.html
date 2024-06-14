@@ -60,4 +60,6 @@
     </tr>
   </table>
 </div>
-<button type="button" class="send" [disabled]="form.invalid || details.length===0" (click)="onSend()">送出訂單</button>
+<button type="button" class="send" [disabled]="form.invalid || details.length===0" (click)="onSend()">
+  送出訂單({{ totalPrice | currency }})
+</button>
