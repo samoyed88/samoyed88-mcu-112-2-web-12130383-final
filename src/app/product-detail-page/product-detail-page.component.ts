@@ -3,6 +3,7 @@ import { Component, Input, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { Product } from '../model/product';
 import { ProductService } from '../services/product.service';
+import { ShoppingCartService } from '../services/shopping-cart.service';
 
 @Component({
   selector: 'app-product-detail-page',
@@ -12,6 +13,8 @@ import { ProductService } from '../services/product.service';
   styleUrl: './product-detail-page.component.css',
 })
 export class ProductDetailPageComponent {
+  readonly shoppingCartService = inject(ShoppingCartService);
+
   @Input()
   product!: Product;
 
@@ -25,5 +28,9 @@ export class ProductDetailPageComponent {
 
   onBack(): void {
     this.router.navigate(['products']);
+  }
+
+  onAdd(): void {
+    this.shoppingCartService.addProduct(this.product);
   }
 }
