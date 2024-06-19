@@ -18,7 +18,6 @@ import { OrderService } from './../services/order.service';
   styleUrl: './shopping-cart-page.component.css',
 })
 export class ShoppingCartPageComponent implements OnInit {
-  [x: string]: any;
   readonly ShoppingCartService = inject(ShoppingCartService);
 
   private readonly destroyRef = inject(DestroyRef);
@@ -67,6 +66,10 @@ export class ShoppingCartPageComponent implements OnInit {
     this.setOrderDetail();
   }
 
+  onDelete(index: number, id: number | undefined): void {
+    this.details.removeAt(index);
+    this.ShoppingCartService.deleteProduct(id!);
+  }
   setOrderDetail() {
     for (const item of this.ShoppingCartService.data) {
       const control = new FormGroup<IOrderForm>({
