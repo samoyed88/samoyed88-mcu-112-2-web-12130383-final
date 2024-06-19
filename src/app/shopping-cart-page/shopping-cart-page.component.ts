@@ -5,9 +5,10 @@ import { FormArray, FormControl, FormGroup, ReactiveFormsModule, Validators } fr
 import { filter, map } from 'rxjs';
 import { IOrderForm } from '../interface/order-form.interface';
 import { IShoppingCartForm } from '../interface/shopping-cart.interface';
+import { Order, OrderDetail } from '../model/order';
 import { Product } from '../model/product';
-import { ShoppingCartSendService } from '../services/shopping-cart-send.service';
 import { ShoppingCartService } from '../services/shopping-cart.service';
+import { OrderService } from './../services/order.service';
 
 @Component({
   selector: 'app-shopping-cart-page',
@@ -22,7 +23,7 @@ export class ShoppingCartPageComponent implements OnInit {
 
   private readonly destroyRef = inject(DestroyRef);
 
-  readonly ShoppingCartSendService = inject(ShoppingCartSendService);
+  readonly OrderService = inject(OrderService);
 
   totalPrice = 0;
 
@@ -90,8 +91,19 @@ export class ShoppingCartPageComponent implements OnInit {
 
   onSend(): void {
     if (this.form.valid) {
-      const order = this.form.value;
-      this.ShoppingCartSendService.sendOrder(order).subscribe({
+      const orderDetails: OrderDetail[] = this.details.value.map((detail) => ({
+        id: detail.id!,
+        product: detail.product!,
+        count: detail.count!,
+        price: detail.price!,
+      }));
+      const order: Order = {
+        name: this.name.value!,
+        address: this.address.value!,
+        phone: this.phone.value!,
+        details: orderDetails,
+      };
+      this.OrderService.sendOrder(order).subscribe({
         next: (response) => {
           console.log('Order saved successfully', response);
         },
