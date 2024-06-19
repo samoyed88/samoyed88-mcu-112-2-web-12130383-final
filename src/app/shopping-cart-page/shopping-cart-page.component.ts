@@ -6,6 +6,7 @@ import { filter, map } from 'rxjs';
 import { IOrderForm } from '../interface/order-form.interface';
 import { IShoppingCartForm } from '../interface/shopping-cart.interface';
 import { Product } from '../model/product';
+import { ShoppingCartSendService } from '../services/shopping-cart-send.service';
 import { ShoppingCartService } from '../services/shopping-cart.service';
 
 @Component({
@@ -16,9 +17,12 @@ import { ShoppingCartService } from '../services/shopping-cart.service';
   styleUrl: './shopping-cart-page.component.css',
 })
 export class ShoppingCartPageComponent implements OnInit {
+  [x: string]: any;
   readonly ShoppingCartService = inject(ShoppingCartService);
 
   private readonly destroyRef = inject(DestroyRef);
+
+  readonly ShoppingCartSendService = inject(ShoppingCartSendService);
 
   totalPrice = 0;
 
@@ -85,6 +89,18 @@ export class ShoppingCartPageComponent implements OnInit {
   }
 
   onSend(): void {
-    console.log('save');
+    if (this.form.valid) {
+      const order = this.form.value;
+      this.ShoppingCartSendService.sendOrder(order).subscribe({
+        next: (response) => {
+          console.log('Order saved successfully', response);
+        },
+        error: (error) => {
+          console.error('Error saving order', error);
+        },
+      });
+    } else {
+      console.error('Form is invalid');
+    }
   }
 }
