@@ -66,8 +66,12 @@ td {
 button.send {
   display: block;
   margin: 0 auto; /* 使按鈕居中 */
-  padding: 10px 20px;
+  padding: 8px;
   font-size: 16px;
+  background-color: transparent;
+  cursor: pointer;
+  color: #005cbb;
+  border: 1px solid #005cbb;
 }
 
 button.send:disabled {
